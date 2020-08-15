@@ -1,6 +1,6 @@
 `timescale 1ns / 1ns
 module async_fifo #(
-    parameter   AW = 3,
+    parameter   DP = 8,
     parameter   DW = 32 )(
     input               wr_clk,
     input               wr_reset_n,
@@ -16,7 +16,7 @@ module async_fifo #(
     output              aempty
 );
 
-localparam  DP      = 2**AW;
+localparam  AW      = $clog2(DP);
 localparam  WR_FAST = 1'b1;
 localparam  RD_FAST = 1'b1;
 

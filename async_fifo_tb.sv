@@ -1,7 +1,7 @@
 `timescale 1ns / 1ns
 module async_fifo_tb;
 
-localparam  AW = 3;
+localparam  DP = 8;
 localparam  DW = 8;
 
 logic               wr_clk;
@@ -16,7 +16,7 @@ logic   [DW-1:0]    rd_data;
 logic               rd_empty;
 
 async_fifo #(
-    .AW (AW) ,
+    .DP (DP) ,
     .DW (DW) ) u_fifo (
     .wr_clk         (wr_clk         ),
     .wr_reset_n     (wr_rst_n       ),
